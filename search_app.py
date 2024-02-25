@@ -13,7 +13,6 @@ try:
     response = requests.get(geocoder_api_server, params=geocoder_params).json()
     toponym = response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
     lon, lat = toponym["Point"]["pos"].split()
-    map_params = {"ll": ",".join([lon, lat]), "l": "map"}
 
     search_api_server = "https://search-maps.yandex.ru/v1/"
     search_params = {"apikey": "dda3ddba-c9ea-4ead-9010-f43fbc15c6e3", "text": "аптека",
